@@ -84,6 +84,7 @@ namespace MyOpenBaking
                 endpoints.MapRazorPages();
             });
 
+            //teste
             app.UseSpa(spa =>
             {
                 // To learn more about options for serving an Angular SPA from ASP.NET Core,
