@@ -4,10 +4,14 @@ using Microsoft.AspNetCore.SpaServices.AngularCli;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using AspNetCore.Identity.Mongo;
 using Microsoft.AspNetCore.Authorization;
-using MyOpenBaking.Models;
 using MyOpenBaking.Api.Policy;
+using MyOpenBanking.DataAccess.Base;
+using Microsoft.Extensions.Options;
+using MyOpenBanking.Application.Services;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
 namespace MyOpenBaking
 {
@@ -26,30 +30,40 @@ namespace MyOpenBaking
         public void ConfigureServices(IServiceCollection services)
         {
 
-            services.AddIdentityMongoDbProvider<ApplicationUser>(identity =>
+            services.AddSingleton<IMyOpenBankingDatabaseSettings>(db => db.GetRequiredService<IOptions<MyOpenBankingDatabaseSettings>>().Value);
+            services.AddScoped<UserService>();
+
+
+            services.AddControllers().AddNewtonsoftJson();
+
+            //services.AddControllersWithViews().AddNewtonsoftJson();
+            //services.AddRazorPages().AddNewtonsoftJson();
+            //services.AddMvc().AddNewtonsoftJson();
+
+            services.Configure<IMyOpenBankingDatabaseSettings>(Configuration.GetSection(nameof(MyOpenBankingDatabaseSettings)));
+            services.AddAuthentication(x =>
             {
-                identity.Password.RequireDigit = false;
-                identity.Password.RequireLowercase = false;
-                identity.Password.RequireNonAlphanumeric = false;
-                identity.Password.RequireUppercase = false;
-                identity.Password.RequiredLength = 3;
-                identity.Password.RequiredUniqueChars = 0;
-            },
-                mongo =>
+                x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            })
+            .AddJwtBearer(x =>
+            {
+                x.RequireHttpsMetadata = false;
+                x.SaveToken = true;
+                x.TokenValidationParameters = new TokenValidationParameters
                 {
-                    mongo.ConnectionString = ConnectionString;
-                }
-            );
-            services.AddControllersWithViews();
-            services.AddRazorPages();
+                    ValidateIssuerSigningKey = true,
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(Configuration.GetSection("JwtKey").ToString()))
+                };
+            });
+
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
             {
                 configuration.RootPath = "ClientApp/dist";
             });
 
-            services.AddSingleton<IAuthorizationPolicyProvider, AuthorizationPolicyProvider>();
-            services.AddSingleton<IAuthorizationHandler, HasClaimHandler>();
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
