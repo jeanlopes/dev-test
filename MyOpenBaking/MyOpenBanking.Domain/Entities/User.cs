@@ -1,19 +1,16 @@
-﻿using MyOpenBanking.Domain.Entities.Base;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using MongoDB.Bson.Serialization.Attributes;
+using MyOpenBanking.Domain.Entities.Base;
 
 namespace MyOpenBanking.Domain.Entities
 {
     public class User : BaseEntity
     {
-        public User(string userName)
-        {
-            UserName = userName;
-        }
+        
 
-        public string UserName { get; set; }
+        [BsonElement("Email")]
+        public string Email { get; set; }
+
+        [BsonElement("Password")]
+        public string Password { get; set; }
     }
 }
