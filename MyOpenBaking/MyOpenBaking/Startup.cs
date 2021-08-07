@@ -4,8 +4,6 @@ using Microsoft.AspNetCore.SpaServices.AngularCli;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.AspNetCore.Authorization;
-using MyOpenBaking.Api.Policy;
 using MyOpenBanking.DataAccess.Base;
 using Microsoft.Extensions.Options;
 using MyOpenBanking.Application.Services;
@@ -29,6 +27,13 @@ namespace MyOpenBaking
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            // https://www.infoworld.com/article/3327562/how-to-enable-cors-in-aspnet-core.html
+            services.AddCors(o => o.AddPolicy("MyPolicy", builder =>
+            {
+                builder.AllowAnyOrigin()
+                       .AllowAnyMethod()
+                       .AllowAnyHeader();
+            }));
 
             services.AddSingleton<IMyOpenBankingDatabaseSettings>(db => db.GetRequiredService<IOptions<MyOpenBankingDatabaseSettings>>().Value);
             services.AddScoped<UserService>();
@@ -73,6 +78,7 @@ namespace MyOpenBaking
             {
                 app.UseDeveloperExceptionPage();
                 app.UseMigrationsEndPoint();
+                app.UseCors("MyPolicy");
             }
             else
             {
@@ -81,6 +87,7 @@ namespace MyOpenBaking
                 app.UseHsts();
             }
 
+            
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             if (!env.IsDevelopment())
@@ -97,7 +104,7 @@ namespace MyOpenBaking
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller}/{action=Index}/{id?}");
-                endpoints.MapRazorPages();
+                //endpoints.MapRazorPages();
             });
             
             app.UseSpa(spa =>

@@ -24,7 +24,7 @@ namespace MyOpenBaking.Api.Controllers
         [HttpGet("signin/{id}")]
         public ActionResult Signin([FromBody] User user)
         {
-            var token = _service.Authenticate(user.Email, user.Password);
+            var token = _service.Authenticate(user.UserName, user.Password);
             if (token == null)
                 return Unauthorized();
 
