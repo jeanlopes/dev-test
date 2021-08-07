@@ -3,7 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31515.178
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyOpenBaking", "MyOpenBaking\MyOpenBaking.csproj", "{21D3A4B0-134B-4789-B619-FC18E1D5491F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyOpenBaking.Api", "MyOpenBaking\MyOpenBaking.Api.csproj", "{21D3A4B0-134B-4789-B619-FC18E1D5491F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyOpenBanking.Application", "MyOpenBanking.Application\MyOpenBanking.Application.csproj", "{7A66F2CF-4C51-45F1-8BBB-BCF0715BC0F6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyOpenBanking.DataAccess", "MyOpenBanking.DataAccess\MyOpenBanking.DataAccess.csproj", "{B72810CA-6970-4CFF-95C5-3AB91E147F91}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyOpenBanking.Domain", "MyOpenBanking.Domain\MyOpenBanking.Domain.csproj", "{23D783FC-E785-4EDC-936B-2973264B18F3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyOpenBanking.IoC", "MyOpenBanking.IoC\MyOpenBanking.IoC.csproj", "{86CC298C-58DE-4CF2-9445-6864906455C9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyOpenBanking.Tests", "MyOpenBanking.Tests\MyOpenBanking.Tests.csproj", "{A330D61B-DA17-4948-9E88-3305377D2384}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +25,26 @@ Global
 		{21D3A4B0-134B-4789-B619-FC18E1D5491F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{21D3A4B0-134B-4789-B619-FC18E1D5491F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{21D3A4B0-134B-4789-B619-FC18E1D5491F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7A66F2CF-4C51-45F1-8BBB-BCF0715BC0F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A66F2CF-4C51-45F1-8BBB-BCF0715BC0F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A66F2CF-4C51-45F1-8BBB-BCF0715BC0F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A66F2CF-4C51-45F1-8BBB-BCF0715BC0F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B72810CA-6970-4CFF-95C5-3AB91E147F91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B72810CA-6970-4CFF-95C5-3AB91E147F91}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B72810CA-6970-4CFF-95C5-3AB91E147F91}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B72810CA-6970-4CFF-95C5-3AB91E147F91}.Release|Any CPU.Build.0 = Release|Any CPU
+		{23D783FC-E785-4EDC-936B-2973264B18F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23D783FC-E785-4EDC-936B-2973264B18F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23D783FC-E785-4EDC-936B-2973264B18F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23D783FC-E785-4EDC-936B-2973264B18F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{86CC298C-58DE-4CF2-9445-6864906455C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86CC298C-58DE-4CF2-9445-6864906455C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86CC298C-58DE-4CF2-9445-6864906455C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86CC298C-58DE-4CF2-9445-6864906455C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A330D61B-DA17-4948-9E88-3305377D2384}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A330D61B-DA17-4948-9E88-3305377D2384}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A330D61B-DA17-4948-9E88-3305377D2384}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A330D61B-DA17-4948-9E88-3305377D2384}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
