@@ -1,18 +1,20 @@
-using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.SpaServices.AngularCli;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using MyOpenBaking.Data;
+using AspNetCore.Identity.Mongo;
+using Microsoft.AspNetCore.Authorization;
 using MyOpenBaking.Models;
+using MyOpenBaking.Api.Policy;
 
 namespace MyOpenBaking
 {
     public class Startup
     {
+        private string ConnectionString => Configuration.GetConnectionString("DefaultConnection");
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -23,20 +25,21 @@ namespace MyOpenBaking
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlServer(
-                    Configuration.GetConnectionString("DefaultConnection")));
 
-            services.AddDatabaseDeveloperPageExceptionFilter();
-
-            services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true)
-                .AddEntityFrameworkStores<ApplicationDbContext>();
-
-            services.AddIdentityServer()
-                .AddApiAuthorization<ApplicationUser, ApplicationDbContext>();
-
-            services.AddAuthentication()
-                .AddIdentityServerJwt();
+            services.AddIdentityMongoDbProvider<ApplicationUser>(identity =>
+            {
+                identity.Password.RequireDigit = false;
+                identity.Password.RequireLowercase = false;
+                identity.Password.RequireNonAlphanumeric = false;
+                identity.Password.RequireUppercase = false;
+                identity.Password.RequiredLength = 3;
+                identity.Password.RequiredUniqueChars = 0;
+            },
+                mongo =>
+                {
+                    mongo.ConnectionString = ConnectionString;
+                }
+            );
             services.AddControllersWithViews();
             services.AddRazorPages();
             // In production, the Angular files will be served from this directory
@@ -44,6 +47,9 @@ namespace MyOpenBaking
             {
                 configuration.RootPath = "ClientApp/dist";
             });
+
+            services.AddSingleton<IAuthorizationPolicyProvider, AuthorizationPolicyProvider>();
+            services.AddSingleton<IAuthorizationHandler, HasClaimHandler>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -71,7 +77,6 @@ namespace MyOpenBaking
             app.UseRouting();
 
             app.UseAuthentication();
-            app.UseIdentityServer();
             app.UseAuthorization();
             app.UseEndpoints(endpoints =>
             {
@@ -80,8 +85,7 @@ namespace MyOpenBaking
                     pattern: "{controller}/{action=Index}/{id?}");
                 endpoints.MapRazorPages();
             });
-
-            //teste
+            
             app.UseSpa(spa =>
             {
                 // To learn more about options for serving an Angular SPA from ASP.NET Core,
