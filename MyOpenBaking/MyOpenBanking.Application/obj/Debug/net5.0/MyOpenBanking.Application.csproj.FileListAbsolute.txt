@@ -1,0 +1,12 @@
+C:\Users\jeano\Documents\workspace\dev-test\MyOpenBaking\MyOpenBanking.Application\bin\Debug\net5.0\MyOpenBanking.Application.deps.json
+C:\Users\jeano\Documents\workspace\dev-test\MyOpenBaking\MyOpenBanking.Application\bin\Debug\net5.0\MyOpenBanking.Application.dll
+C:\Users\jeano\Documents\workspace\dev-test\MyOpenBaking\MyOpenBanking.Application\bin\Debug\net5.0\ref\MyOpenBanking.Application.dll
+C:\Users\jeano\Documents\workspace\dev-test\MyOpenBaking\MyOpenBanking.Application\bin\Debug\net5.0\MyOpenBanking.Application.pdb
+C:\Users\jeano\Documents\workspace\dev-test\MyOpenBaking\MyOpenBanking.Application\obj\Debug\net5.0\MyOpenBanking.Application.csproj.AssemblyReference.cache
+C:\Users\jeano\Documents\workspace\dev-test\MyOpenBaking\MyOpenBanking.Application\obj\Debug\net5.0\MyOpenBanking.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jeano\Documents\workspace\dev-test\MyOpenBaking\MyOpenBanking.Application\obj\Debug\net5.0\MyOpenBanking.Application.AssemblyInfoInputs.cache
+C:\Users\jeano\Documents\workspace\dev-test\MyOpenBaking\MyOpenBanking.Application\obj\Debug\net5.0\MyOpenBanking.Application.AssemblyInfo.cs
+C:\Users\jeano\Documents\workspace\dev-test\MyOpenBaking\MyOpenBanking.Application\obj\Debug\net5.0\MyOpenBanking.Application.csproj.CoreCompileInputs.cache
+C:\Users\jeano\Documents\workspace\dev-test\MyOpenBaking\MyOpenBanking.Application\obj\Debug\net5.0\MyOpenBanking.Application.dll
+C:\Users\jeano\Documents\workspace\dev-test\MyOpenBaking\MyOpenBanking.Application\obj\Debug\net5.0\ref\MyOpenBanking.Application.dll
+C:\Users\jeano\Documents\workspace\dev-test\MyOpenBaking\MyOpenBanking.Application\obj\Debug\net5.0\MyOpenBanking.Application.pdb

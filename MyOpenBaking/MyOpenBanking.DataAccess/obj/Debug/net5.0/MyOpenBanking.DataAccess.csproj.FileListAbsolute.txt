@@ -1,0 +1,12 @@
+C:\Users\jeano\Documents\workspace\dev-test\MyOpenBaking\MyOpenBanking.DataAccess\bin\Debug\net5.0\MyOpenBanking.DataAccess.deps.json
+C:\Users\jeano\Documents\workspace\dev-test\MyOpenBaking\MyOpenBanking.DataAccess\bin\Debug\net5.0\MyOpenBanking.DataAccess.dll
+C:\Users\jeano\Documents\workspace\dev-test\MyOpenBaking\MyOpenBanking.DataAccess\bin\Debug\net5.0\ref\MyOpenBanking.DataAccess.dll
+C:\Users\jeano\Documents\workspace\dev-test\MyOpenBaking\MyOpenBanking.DataAccess\bin\Debug\net5.0\MyOpenBanking.DataAccess.pdb
+C:\Users\jeano\Documents\workspace\dev-test\MyOpenBaking\MyOpenBanking.DataAccess\obj\Debug\net5.0\MyOpenBanking.DataAccess.csproj.AssemblyReference.cache
+C:\Users\jeano\Documents\workspace\dev-test\MyOpenBaking\MyOpenBanking.DataAccess\obj\Debug\net5.0\MyOpenBanking.DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jeano\Documents\workspace\dev-test\MyOpenBaking\MyOpenBanking.DataAccess\obj\Debug\net5.0\MyOpenBanking.DataAccess.AssemblyInfoInputs.cache
+C:\Users\jeano\Documents\workspace\dev-test\MyOpenBaking\MyOpenBanking.DataAccess\obj\Debug\net5.0\MyOpenBanking.DataAccess.AssemblyInfo.cs
+C:\Users\jeano\Documents\workspace\dev-test\MyOpenBaking\MyOpenBanking.DataAccess\obj\Debug\net5.0\MyOpenBanking.DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\jeano\Documents\workspace\dev-test\MyOpenBaking\MyOpenBanking.DataAccess\obj\Debug\net5.0\MyOpenBanking.DataAccess.dll
+C:\Users\jeano\Documents\workspace\dev-test\MyOpenBaking\MyOpenBanking.DataAccess\obj\Debug\net5.0\ref\MyOpenBanking.DataAccess.dll
+C:\Users\jeano\Documents\workspace\dev-test\MyOpenBaking\MyOpenBanking.DataAccess\obj\Debug\net5.0\MyOpenBanking.DataAccess.pdb
