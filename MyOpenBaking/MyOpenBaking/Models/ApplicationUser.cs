@@ -1,12 +1,10 @@
-﻿using Microsoft.AspNetCore.Identity;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using AspNetCore.Identity.Mongo.Model;
+using MongoDB.Bson.Serialization.Attributes;
 
 namespace MyOpenBaking.Models
 {
-    public class ApplicationUser : IdentityUser
-    {
-    }
+    [BsonIgnoreExtraElements]
+    public class ApplicationUser : MongoUser
+	{
+	}
 }
