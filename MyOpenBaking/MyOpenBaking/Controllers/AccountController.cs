@@ -1,8 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using System;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -20,15 +18,16 @@ namespace MyOpenBaking.Api.Controllers
         }
 
         // GET api/<AccountController>/5
-        [HttpGet("{id}")]
-        public string Get(int id)
+        [HttpGet("signin/{id}")]
+        [AllowAnonymous]
+        public string Signin(int id)
         {
             return "value";
         }
 
         // POST api/<AccountController>
-        [HttpPost]
-        public void Post([FromBody] string value)
+        [HttpPost("signup")]
+        public void Signup([FromBody] string value)
         {
         }
 
