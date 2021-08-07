@@ -1,4 +1,3 @@
-using AspNetCore.Identity.MongoDbCore;
 using AspNetCore.Identity.MongoDbCore.Extensions;
 using AspNetCore.Identity.MongoDbCore.Infrastructure;
 using Microsoft.AspNetCore.Authentication;
