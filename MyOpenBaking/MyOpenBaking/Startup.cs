@@ -104,9 +104,8 @@ namespace MyOpenBaking
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller}/{action=Index}/{id?}");
-                //endpoints.MapRazorPages();
             });
-            
+
             app.UseSpa(spa =>
             {
                 // To learn more about options for serving an Angular SPA from ASP.NET Core,
