@@ -1,14 +1,16 @@
 ﻿using MongoDB.Driver;
 using MyOpenBanking.Domain.Entities.Base;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace MyOpenBanking.Domain.Repositories
 {
     public interface ICrudRepository<T> where T : BaseEntity
     {
-        IFindFluent<T, T> GetAll();
-        T GetById(string id);
-        T Create(T entity);
-        ReplaceOneResult Update(T entity);
-        DeleteResult Delete(string id);
+        Task<IEnumerable<T>> GetAllAsync();
+        Task<T> GetByIdAsync(string id);
+        Task Create(T entity);
+        Task UpdateAsync(T obj);
+        Task DeleteAsync(string id);
     }
 }
