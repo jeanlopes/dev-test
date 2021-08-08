@@ -34,6 +34,7 @@
   <ItemGroup>
     <ProjectReference Include="..\MyOpenBanking.Application\MyOpenBanking.Application.csproj" />
     <ProjectReference Include="..\MyOpenBanking.DataAccess\MyOpenBanking.DataAccess.csproj" />
+    <ProjectReference Include="..\MyOpenBanking.IoC\MyOpenBanking.IoC.csproj" />
   </ItemGroup>
 
   <ItemGroup>
