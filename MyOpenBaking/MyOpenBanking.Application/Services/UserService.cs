@@ -19,14 +19,11 @@ namespace MyOpenBanking.Application.Services
         private readonly IUserRepository _userRepository;
         private readonly string _key;
         private readonly ILogger<UserService> _logger;
-
-        public UserService(IUserRepository userRepository, IConfiguration configuration, ILogger<UserService> logger)
-        {
-            _logger = logger;
         private readonly IClientSessionHandle _clientSessionHandle;
 
-        public UserService(IUserRepository userRepository, IConfiguration configuration, IClientSessionHandle clientSessionHandle)
+        public UserService(IUserRepository userRepository, IConfiguration configuration, IClientSessionHandle clientSessionHandle, ILogger<UserService> logger)
         {
+            _logger = logger;
             _clientSessionHandle = clientSessionHandle;
             _userRepository = userRepository;
             _key = configuration.GetSection("JwtKey").ToString();
