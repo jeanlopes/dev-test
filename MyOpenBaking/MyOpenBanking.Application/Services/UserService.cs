@@ -9,6 +9,7 @@ using System.Security.Claims;
 using System;
 using MyOpenBanking.Application.Services.Interface;
 using MyOpenBanking.Domain.Repositories;
+using Microsoft.Extensions.Logging;
 using System.Threading.Tasks;
 
 namespace MyOpenBanking.Application.Services
@@ -17,6 +18,11 @@ namespace MyOpenBanking.Application.Services
     {
         private readonly IUserRepository _userRepository;
         private readonly string _key;
+        private readonly ILogger<UserService> _logger;
+
+        public UserService(IUserRepository userRepository, IConfiguration configuration, ILogger<UserService> logger)
+        {
+            _logger = logger;
         private readonly IClientSessionHandle _clientSessionHandle;
 
         public UserService(IUserRepository userRepository, IConfiguration configuration, IClientSessionHandle clientSessionHandle)
@@ -34,7 +40,7 @@ namespace MyOpenBanking.Application.Services
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                _logger.LogError(ex.Message);
                 throw;
             }
             
@@ -48,7 +54,7 @@ namespace MyOpenBanking.Application.Services
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                _logger.LogError(ex.Message);
                 throw;
             }
         }
@@ -63,8 +69,8 @@ namespace MyOpenBanking.Application.Services
             }
             catch (Exception ex)
             {
+                _logger.LogError(ex.Message);
                 await _clientSessionHandle.AbortTransactionAsync();
-                Console.WriteLine(ex.Message);
                 throw;
             }
         }
@@ -97,7 +103,7 @@ namespace MyOpenBanking.Application.Services
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                _logger.LogError(ex.Message);
                 throw;
             }
 

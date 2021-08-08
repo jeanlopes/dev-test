@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "AmM/PRyy9BOjpS+SK7H25WuTNBvGlY8IcwejAhcle6wE53jwV4WU1lmof0FQJjhKgV4CJFT4N+6uS0BUil7jeA==",
+  "dgSpecHash": "k4AK4+NLfsaYhlp/M2+rb1hJoNLbTVguGYj/Wrp1jlzCIJtNPe0UMkwB5K29t1BJN+xQCSqur8YVsGR6JTm4ww==",
   "success": true,
   "projectFilePath": "C:\\Users\\jeano\\Documents\\workspace\\dev-test\\MyOpenBaking\\MyOpenBanking.IoC\\MyOpenBanking.IoC.csproj",
   "expectedPackageFiles": [
@@ -11,6 +11,9 @@
     "C:\\Users\\jeano\\.nuget\\packages\\microsoft.extensions.configuration.binder\\5.0.0\\microsoft.extensions.configuration.binder.5.0.0.nupkg.sha512",
     "C:\\Users\\jeano\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\5.0.2\\microsoft.extensions.dependencyinjection.5.0.2.nupkg.sha512",
     "C:\\Users\\jeano\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\5.0.0\\microsoft.extensions.dependencyinjection.abstractions.5.0.0.nupkg.sha512",
+    "C:\\Users\\jeano\\.nuget\\packages\\microsoft.extensions.logging\\5.0.0\\microsoft.extensions.logging.5.0.0.nupkg.sha512",
+    "C:\\Users\\jeano\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\5.0.0\\microsoft.extensions.logging.abstractions.5.0.0.nupkg.sha512",
+    "C:\\Users\\jeano\\.nuget\\packages\\microsoft.extensions.options\\5.0.0\\microsoft.extensions.options.5.0.0.nupkg.sha512",
     "C:\\Users\\jeano\\.nuget\\packages\\microsoft.extensions.primitives\\5.0.0\\microsoft.extensions.primitives.5.0.0.nupkg.sha512",
     "C:\\Users\\jeano\\.nuget\\packages\\microsoft.identitymodel.jsonwebtokens\\6.12.0\\microsoft.identitymodel.jsonwebtokens.6.12.0.nupkg.sha512",
     "C:\\Users\\jeano\\.nuget\\packages\\microsoft.identitymodel.logging\\6.12.0\\microsoft.identitymodel.logging.6.12.0.nupkg.sha512",
