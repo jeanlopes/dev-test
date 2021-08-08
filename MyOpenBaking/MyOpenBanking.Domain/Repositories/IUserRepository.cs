@@ -1,9 +1,10 @@
 ﻿using MyOpenBanking.Domain.Entities;
+using System.Threading.Tasks;
 
 namespace MyOpenBanking.Domain.Repositories
 {
     public interface IUserRepository : ICrudRepository<User>
     {
-        User GetByUserAndPassword(string userName, string password);
+        Task<User> GetByUserAndPasswordAsync(string userName, string password);
     }
 }
