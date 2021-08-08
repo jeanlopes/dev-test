@@ -10,6 +10,7 @@ using System;
 using MyOpenBanking.Application.Services.Interface;
 using MyOpenBanking.Domain.Repositories;
 using Microsoft.Extensions.Logging;
+using System.Threading.Tasks;
 
 namespace MyOpenBanking.Application.Services
 {
@@ -22,15 +23,20 @@ namespace MyOpenBanking.Application.Services
         public UserService(IUserRepository userRepository, IConfiguration configuration, ILogger<UserService> logger)
         {
             _logger = logger;
+        private readonly IClientSessionHandle _clientSessionHandle;
+
+        public UserService(IUserRepository userRepository, IConfiguration configuration, IClientSessionHandle clientSessionHandle)
+        {
+            _clientSessionHandle = clientSessionHandle;
             _userRepository = userRepository;
             _key = configuration.GetSection("JwtKey").ToString();
         }
 
-        public IEnumerable<User> GetUsers() 
+        public async Task<IEnumerable<User>> GetUsers()
         {
             try
             {
-                return _userRepository.GetAll().ToList();
+                return await _userRepository.GetAllAsync();
             }
             catch (Exception ex)
             {
@@ -40,11 +46,11 @@ namespace MyOpenBanking.Application.Services
             
          }
 
-        public User GetUser(string id)
+        public async Task<User> GetUser(string id)
         {
             try
             {
-                return _userRepository.GetById(id);
+                return await _userRepository.GetByIdAsync(id);
             }
             catch (Exception ex)
             {
@@ -52,23 +58,27 @@ namespace MyOpenBanking.Application.Services
                 throw;
             }
         }
-        public User Create(User user)
+        public async Task<User> Create(User user)
         {
+            _clientSessionHandle.StartTransaction();
             try
             {
-                return _userRepository.Create(user);
+                await _userRepository.Create(user);
+                await _clientSessionHandle.CommitTransactionAsync();
+                return user;
             }
             catch (Exception ex)
             {
                 _logger.LogError(ex.Message);
+                await _clientSessionHandle.AbortTransactionAsync();
                 throw;
             }
         }
 
-        public string Authenticate(string username, string password)
+        public async Task<string> Authenticate(string username, string password)
         {
             try {
-                var user = _userRepository.GetByUserAndPassword(username, password);
+                var user = await _userRepository.GetByUserAndPasswordAsync(username, password);
 
                 if (user == null)
                     return null;

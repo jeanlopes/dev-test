@@ -1,7 +1,8 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using MyOpenBanking.Application.Services;
+using MyOpenBanking.Application.Services.Interface;
 using MyOpenBanking.Domain.Entities;
+using System.Threading.Tasks;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -13,18 +14,18 @@ namespace MyOpenBaking.Api.Controllers
     public class AccountController : Controller
     {
 
-        private readonly UserService _service;
-        public AccountController(UserService service) => _service = service;
+        private readonly IUserService _service;
+        public AccountController(IUserService service) => _service = service;
         
        
         [HttpGet]
-        public JsonResult GetUsers() => Json(_service.GetUsers());
+        public async Task<JsonResult> GetUsers() => Json(await _service.GetUsers());
 
         [AllowAnonymous]
         [HttpPost("signin")]
-        public ActionResult Signin([FromBody] User user)
+        public async Task<ActionResult> Signin([FromBody] User user)
         {
-            var token = _service.Authenticate(user.UserName, user.Password);
+            var token = await _service.Authenticate(user.UserName, user.Password);
             if (token == null)
                 return Unauthorized();
 
@@ -34,15 +35,15 @@ namespace MyOpenBaking.Api.Controllers
         // POST api/<AccountController>
         [AllowAnonymous]
         [HttpPost("signup")]
-        public JsonResult Signup([FromBody] User user)
+        public async Task<JsonResult> Signup([FromBody] User user)
         {
-            _service.Create(user);
+            await _service.Create(user);
             return Json(user);
         }
 
 
         [HttpGet("{id:length(24)}")]
-        public JsonResult GetUser(string id) => Json(_service.GetUser(id));
+        public async Task<JsonResult> GetUser(string id) => Json(await _service.GetUser(id));
 
 
         // PUT api/<AccountController>/5
