@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using MyOpenBanking.IoC;
+using Microsoft.OpenApi.Models;
 
 namespace MyOpenBaking
 {
@@ -40,7 +41,10 @@ namespace MyOpenBaking
             services.Register(Configuration);
 
             services.AddControllers().AddNewtonsoftJson();
-
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "My Open Baking API", Version = "v1" });
+            });
             //services.AddControllersWithViews().AddNewtonsoftJson();
             //services.AddRazorPages().AddNewtonsoftJson();
             //services.AddMvc().AddNewtonsoftJson();
@@ -79,6 +83,9 @@ namespace MyOpenBaking
                 app.UseDeveloperExceptionPage();
                 app.UseMigrationsEndPoint();
                 app.UseCors("MyPolicy");
+                app.UseSwagger();
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "My Open Baking API v1"));
+
             }
             else
             {
