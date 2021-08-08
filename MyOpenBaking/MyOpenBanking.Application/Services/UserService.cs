@@ -9,6 +9,7 @@ using System.Security.Claims;
 using System;
 using MyOpenBanking.Application.Services.Interface;
 using MyOpenBanking.Domain.Repositories;
+using Microsoft.Extensions.Logging;
 
 namespace MyOpenBanking.Application.Services
 {
@@ -16,9 +17,11 @@ namespace MyOpenBanking.Application.Services
     {
         private readonly IUserRepository _userRepository;
         private readonly string _key;
+        private readonly ILogger<UserService> _logger;
 
-        public UserService(IUserRepository userRepository, IConfiguration configuration)
+        public UserService(IUserRepository userRepository, IConfiguration configuration, ILogger<UserService> logger)
         {
+            _logger = logger;
             _userRepository = userRepository;
             _key = configuration.GetSection("JwtKey").ToString();
         }
@@ -31,7 +34,7 @@ namespace MyOpenBanking.Application.Services
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                _logger.LogError(ex.Message);
                 throw;
             }
             
@@ -45,7 +48,7 @@ namespace MyOpenBanking.Application.Services
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                _logger.LogError(ex.Message);
                 throw;
             }
         }
@@ -57,7 +60,7 @@ namespace MyOpenBanking.Application.Services
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                _logger.LogError(ex.Message);
                 throw;
             }
         }
@@ -90,7 +93,7 @@ namespace MyOpenBanking.Application.Services
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                _logger.LogError(ex.Message);
                 throw;
             }
 
