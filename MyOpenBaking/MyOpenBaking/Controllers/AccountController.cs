@@ -21,18 +21,18 @@ namespace MyOpenBaking.Api.Controllers
         public JsonResult GetUsers() => Json(_service.GetUsers());
 
         [AllowAnonymous]
-        [HttpGet("signin/{id}")]
+        [HttpPost("signin")]
         public ActionResult Signin([FromBody] User user)
         {
-            var token = _service.Authenticate(user.Email, user.Password);
+            var token = _service.Authenticate(user.UserName, user.Password);
             if (token == null)
                 return Unauthorized();
 
-            return Ok(new { token, user });
-            
+            return Ok(new { accessToken=token, user });
         }
 
         // POST api/<AccountController>
+        [AllowAnonymous]
         [HttpPost("signup")]
         public JsonResult Signup([FromBody] User user)
         {

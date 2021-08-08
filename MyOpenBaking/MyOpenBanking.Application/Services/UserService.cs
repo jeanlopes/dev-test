@@ -35,9 +35,9 @@ namespace MyOpenBanking.Application.Services
             return user;
         }
 
-        public string Authenticate(string email, string password)
+        public string Authenticate(string username, string password)
         {
-            var user = _users.Find(x => x.Email == email && x.Password == password).FirstOrDefault();
+            var user = _users.Find(x => x.UserName == username && x.Password == password).FirstOrDefault();
 
             if (user == null)
                 return null;
@@ -48,7 +48,7 @@ namespace MyOpenBanking.Application.Services
             {
                 Subject = new ClaimsIdentity(new Claim[]
                 {
-                    new Claim(ClaimTypes.Email, email),
+                    new Claim(ClaimTypes.Name, username),
                 }),
                 Expires = DateTime.UtcNow.AddHours(1),
                 SigningCredentials = new SigningCredentials(

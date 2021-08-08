@@ -7,6 +7,9 @@ namespace MyOpenBanking.Domain.Entities
     {
         
 
+        [BsonElement("UserName")]
+        public string UserName { get; set; }
+
         [BsonElement("Email")]
         public string Email { get; set; }
 
