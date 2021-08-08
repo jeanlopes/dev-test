@@ -7,58 +7,92 @@ using System.Text;
 using Microsoft.IdentityModel.Tokens;
 using System.Security.Claims;
 using System;
+using MyOpenBanking.Application.Services.Interface;
+using MyOpenBanking.Domain.Repositories;
 
 namespace MyOpenBanking.Application.Services
 {
-    public class UserService
+    public class UserService : IUserService
     {
-        private readonly IMongoCollection<User> _users;
+        private readonly IUserRepository _userRepository;
         private readonly string _key;
 
-        public UserService(IConfiguration configuration)
+        public UserService(IUserRepository userRepository, IConfiguration configuration)
         {
-            var databaseName = configuration.GetValue<string>("MyOpenBankingDatabaseSettings:DatabaseName");
-            var client = new MongoClient(configuration.GetConnectionString("DefaultConnection"));
-            var database = client.GetDatabase(databaseName);
-
-            _users = database.GetCollection<User>("Users");
+            _userRepository = userRepository;
             _key = configuration.GetSection("JwtKey").ToString();
         }
 
-        public List<User> GetUsers() => _users.Find(user => true).ToList();
+        public IEnumerable<User> GetUsers() 
+        {
+            try
+            {
+                return _userRepository.GetAll().ToList();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                throw;
+            }
+            
+         }
 
-        public User GetUser(string id) => _users.Find(user => user.Id == id).FirstOrDefault();
-
+        public User GetUser(string id)
+        {
+            try
+            {
+                return _userRepository.GetById(id);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                throw;
+            }
+        }
         public User Create(User user)
         {
-            _users.InsertOne(user);
-            return user;
+            try
+            {
+                return _userRepository.Create(user);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                throw;
+            }
         }
 
         public string Authenticate(string username, string password)
         {
-            var user = _users.Find(x => x.UserName == username && x.Password == password).FirstOrDefault();
+            try {
+                var user = _userRepository.GetByUserAndPassword(username, password);
 
-            if (user == null)
-                return null;
+                if (user == null)
+                    return null;
 
-            var tokenHandler = new JwtSecurityTokenHandler();
-            var tokenKey = Encoding.ASCII.GetBytes(_key);
-            var tokenDescriptor = new SecurityTokenDescriptor
-            {
-                Subject = new ClaimsIdentity(new Claim[]
+                var tokenHandler = new JwtSecurityTokenHandler();
+                var tokenKey = Encoding.ASCII.GetBytes(_key);
+                var tokenDescriptor = new SecurityTokenDescriptor
                 {
-                    new Claim(ClaimTypes.Name, username),
-                }),
-                Expires = DateTime.UtcNow.AddHours(1),
-                SigningCredentials = new SigningCredentials(
-                    new SymmetricSecurityKey(tokenKey),
-                    SecurityAlgorithms.HmacSha256Signature
-                )
-            };
+                    Subject = new ClaimsIdentity(new Claim[]
+                    {
+                        new Claim(ClaimTypes.Name, username),
+                    }),
+                    Expires = DateTime.UtcNow.AddHours(1),
+                    SigningCredentials = new SigningCredentials(
+                        new SymmetricSecurityKey(tokenKey),
+                        SecurityAlgorithms.HmacSha256Signature
+                    )
+                };
 
-            var token = tokenHandler.CreateToken(tokenDescriptor);
-            return tokenHandler.WriteToken(token);
+                var token = tokenHandler.CreateToken(tokenDescriptor);
+                return tokenHandler.WriteToken(token);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                throw;
+            }
 
         }
 

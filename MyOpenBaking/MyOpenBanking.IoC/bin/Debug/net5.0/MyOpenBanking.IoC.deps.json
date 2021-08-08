@@ -9,7 +9,8 @@
       "MyOpenBanking.IoC/1.0.0": {
         "dependencies": {
           "Microsoft.Extensions.DependencyInjection": "5.0.2",
-          "MyOpenBanking.Application": "1.0.0"
+          "MyOpenBanking.Application": "1.0.0",
+          "MyOpenBanking.DataAccess": "1.0.0"
         },
         "runtime": {
           "MyOpenBanking.IoC.dll": {}
@@ -243,6 +244,15 @@
           "MyOpenBanking.Application.dll": {}
         }
       },
+      "MyOpenBanking.DataAccess/1.0.0": {
+        "dependencies": {
+          "Microsoft.Extensions.Configuration": "5.0.0",
+          "MyOpenBanking.Domain": "1.0.0"
+        },
+        "runtime": {
+          "MyOpenBanking.DataAccess.dll": {}
+        }
+      },
       "MyOpenBanking.Domain/1.0.0": {
         "dependencies": {
           "MongoDB.Driver": "2.13.1"
@@ -414,6 +424,11 @@
       "hashPath": "system.text.encoding.codepages.4.5.1.nupkg.sha512"
     },
     "MyOpenBanking.Application/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "MyOpenBanking.DataAccess/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
