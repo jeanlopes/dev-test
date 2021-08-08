@@ -9,3 +9,4 @@ C:\Users\jeano\Documents\workspace\dev-test\MyOpenBaking\MyOpenBanking.Domain\ob
 C:\Users\jeano\Documents\workspace\dev-test\MyOpenBaking\MyOpenBanking.Domain\obj\Debug\net5.0\MyOpenBanking.Domain.dll
 C:\Users\jeano\Documents\workspace\dev-test\MyOpenBaking\MyOpenBanking.Domain\obj\Debug\net5.0\ref\MyOpenBanking.Domain.dll
 C:\Users\jeano\Documents\workspace\dev-test\MyOpenBaking\MyOpenBanking.Domain\obj\Debug\net5.0\MyOpenBanking.Domain.pdb
+C:\Users\jeano\Documents\workspace\dev-test\MyOpenBaking\MyOpenBanking.Domain\obj\Debug\net5.0\MyOpenBanking.Domain.csproj.AssemblyReference.cache

@@ -18,6 +18,7 @@ namespace MyOpenBaking
                     loggingBuilder.ClearProviders();
                     loggingBuilder
                         .AddDebug()
+                        .AddConsole()
                         .AddEventSourceLogger();
                 })
                 .ConfigureWebHostDefaults(webBuilder =>
