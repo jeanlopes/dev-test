@@ -324,6 +324,20 @@
           "bin/placeholder/MyOpenBanking.Application.dll": {}
         }
       },
+      "MyOpenBanking.DataAccess/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "Microsoft.Extensions.Configuration": "5.0.0",
+          "MyOpenBanking.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/MyOpenBanking.DataAccess.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MyOpenBanking.DataAccess.dll": {}
+        }
+      },
       "MyOpenBanking.Domain/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
@@ -949,6 +963,11 @@
       "path": "../MyOpenBanking.Application/MyOpenBanking.Application.csproj",
       "msbuildProject": "../MyOpenBanking.Application/MyOpenBanking.Application.csproj"
     },
+    "MyOpenBanking.DataAccess/1.0.0": {
+      "type": "project",
+      "path": "../MyOpenBanking.DataAccess/MyOpenBanking.DataAccess.csproj",
+      "msbuildProject": "../MyOpenBanking.DataAccess/MyOpenBanking.DataAccess.csproj"
+    },
     "MyOpenBanking.Domain/1.0.0": {
       "type": "project",
       "path": "../MyOpenBanking.Domain/MyOpenBanking.Domain.csproj",
@@ -958,7 +977,8 @@
   "projectFileDependencyGroups": {
     "net5.0": [
       "Microsoft.Extensions.DependencyInjection >= 5.0.2",
-      "MyOpenBanking.Application >= 1.0.0"
+      "MyOpenBanking.Application >= 1.0.0",
+      "MyOpenBanking.DataAccess >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -989,6 +1009,9 @@
           "projectReferences": {
             "C:\\Users\\jeano\\Documents\\workspace\\dev-test\\MyOpenBaking\\MyOpenBanking.Application\\MyOpenBanking.Application.csproj": {
               "projectPath": "C:\\Users\\jeano\\Documents\\workspace\\dev-test\\MyOpenBaking\\MyOpenBanking.Application\\MyOpenBanking.Application.csproj"
+            },
+            "C:\\Users\\jeano\\Documents\\workspace\\dev-test\\MyOpenBaking\\MyOpenBanking.DataAccess\\MyOpenBanking.DataAccess.csproj": {
+              "projectPath": "C:\\Users\\jeano\\Documents\\workspace\\dev-test\\MyOpenBaking\\MyOpenBanking.DataAccess\\MyOpenBanking.DataAccess.csproj"
             }
           }
         }

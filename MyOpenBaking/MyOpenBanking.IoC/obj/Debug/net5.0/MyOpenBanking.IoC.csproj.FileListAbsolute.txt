@@ -15,3 +15,5 @@ C:\Users\jeano\Documents\workspace\dev-test\MyOpenBaking\MyOpenBanking.IoC\bin\D
 C:\Users\jeano\Documents\workspace\dev-test\MyOpenBaking\MyOpenBanking.IoC\bin\Debug\net5.0\MyOpenBanking.Application.pdb
 C:\Users\jeano\Documents\workspace\dev-test\MyOpenBaking\MyOpenBanking.IoC\bin\Debug\net5.0\MyOpenBanking.Domain.pdb
 C:\Users\jeano\Documents\workspace\dev-test\MyOpenBaking\MyOpenBanking.IoC\obj\Debug\net5.0\MyOpenBanking.IoC.csproj.CopyComplete
+C:\Users\jeano\Documents\workspace\dev-test\MyOpenBaking\MyOpenBanking.IoC\bin\Debug\net5.0\MyOpenBanking.DataAccess.dll
+C:\Users\jeano\Documents\workspace\dev-test\MyOpenBaking\MyOpenBanking.IoC\bin\Debug\net5.0\MyOpenBanking.DataAccess.pdb

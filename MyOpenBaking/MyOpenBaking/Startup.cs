@@ -6,7 +6,6 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using MyOpenBanking.DataAccess.Base;
 using Microsoft.Extensions.Options;
-using MyOpenBanking.Application.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
@@ -37,8 +36,8 @@ namespace MyOpenBaking
             }));
 
             services.AddSingleton<IMyOpenBankingDatabaseSettings>(db => db.GetRequiredService<IOptions<MyOpenBankingDatabaseSettings>>().Value);
-
-            Dependencies.Register(services);
+            
+            services.Register(Configuration);
 
             services.AddControllers().AddNewtonsoftJson();
 

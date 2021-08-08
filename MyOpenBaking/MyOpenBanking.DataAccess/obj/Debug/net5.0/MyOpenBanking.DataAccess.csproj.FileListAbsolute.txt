@@ -10,3 +10,6 @@ C:\Users\jeano\Documents\workspace\dev-test\MyOpenBaking\MyOpenBanking.DataAcces
 C:\Users\jeano\Documents\workspace\dev-test\MyOpenBaking\MyOpenBanking.DataAccess\obj\Debug\net5.0\MyOpenBanking.DataAccess.dll
 C:\Users\jeano\Documents\workspace\dev-test\MyOpenBaking\MyOpenBanking.DataAccess\obj\Debug\net5.0\ref\MyOpenBanking.DataAccess.dll
 C:\Users\jeano\Documents\workspace\dev-test\MyOpenBaking\MyOpenBanking.DataAccess\obj\Debug\net5.0\MyOpenBanking.DataAccess.pdb
+C:\Users\jeano\Documents\workspace\dev-test\MyOpenBaking\MyOpenBanking.DataAccess\bin\Debug\net5.0\MyOpenBanking.Domain.dll
+C:\Users\jeano\Documents\workspace\dev-test\MyOpenBaking\MyOpenBanking.DataAccess\bin\Debug\net5.0\MyOpenBanking.Domain.pdb
+C:\Users\jeano\Documents\workspace\dev-test\MyOpenBaking\MyOpenBanking.DataAccess\obj\Debug\net5.0\MyOpenBanking.DataAccess.csproj.CopyComplete
