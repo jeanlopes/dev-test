@@ -10,6 +10,7 @@ using MyOpenBanking.Application.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
+using MyOpenBanking.IoC;
 
 namespace MyOpenBaking
 {
@@ -36,8 +37,8 @@ namespace MyOpenBaking
             }));
 
             services.AddSingleton<IMyOpenBankingDatabaseSettings>(db => db.GetRequiredService<IOptions<MyOpenBankingDatabaseSettings>>().Value);
-            services.AddScoped<UserService>();
 
+            Dependencies.Register(services);
 
             services.AddControllers().AddNewtonsoftJson();
 
