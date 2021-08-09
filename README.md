@@ -22,4 +22,6 @@ docker build -t myopenbank .
 
 docker run -d -p 5000:80 myopenbank
 
+To run tests, entry on MyOpenBaking\MyOpenBaking.Tests and type
 
+dotnet test
