@@ -1,0 +1,275 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\jeano\\Documents\\workspace\\dev-test\\MyOpenBaking\\MyOpenBanking.IoC\\MyOpenBanking.IoC.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\jeano\\Documents\\workspace\\dev-test\\MyOpenBaking\\MyOpenBanking.Application\\MyOpenBanking.Application.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\jeano\\Documents\\workspace\\dev-test\\MyOpenBaking\\MyOpenBanking.Application\\MyOpenBanking.Application.csproj",
+        "projectName": "MyOpenBanking.Application",
+        "projectPath": "C:\\Users\\jeano\\Documents\\workspace\\dev-test\\MyOpenBaking\\MyOpenBanking.Application\\MyOpenBanking.Application.csproj",
+        "packagesPath": "C:\\Users\\jeano\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\jeano\\Documents\\workspace\\dev-test\\MyOpenBaking\\MyOpenBanking.Application\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\jeano\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\Users\\jeano\\Documents\\workspace\\dev-test\\MyOpenBaking\\MyOpenBanking.Domain\\MyOpenBanking.Domain.csproj": {
+                "projectPath": "C:\\Users\\jeano\\Documents\\workspace\\dev-test\\MyOpenBaking\\MyOpenBanking.Domain\\MyOpenBanking.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.Extensions.Configuration": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Microsoft.Extensions.Configuration.Binder": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Microsoft.Extensions.Logging": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "MongoDB.Driver": {
+              "target": "Package",
+              "version": "[2.13.1, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[6.12.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.302\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\jeano\\Documents\\workspace\\dev-test\\MyOpenBaking\\MyOpenBanking.DataAccess\\MyOpenBanking.DataAccess.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\jeano\\Documents\\workspace\\dev-test\\MyOpenBaking\\MyOpenBanking.DataAccess\\MyOpenBanking.DataAccess.csproj",
+        "projectName": "MyOpenBanking.DataAccess",
+        "projectPath": "C:\\Users\\jeano\\Documents\\workspace\\dev-test\\MyOpenBaking\\MyOpenBanking.DataAccess\\MyOpenBanking.DataAccess.csproj",
+        "packagesPath": "C:\\Users\\jeano\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\jeano\\Documents\\workspace\\dev-test\\MyOpenBaking\\MyOpenBanking.DataAccess\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\jeano\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\Users\\jeano\\Documents\\workspace\\dev-test\\MyOpenBaking\\MyOpenBanking.Domain\\MyOpenBanking.Domain.csproj": {
+                "projectPath": "C:\\Users\\jeano\\Documents\\workspace\\dev-test\\MyOpenBaking\\MyOpenBanking.Domain\\MyOpenBanking.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.Extensions.Configuration": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.302\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\jeano\\Documents\\workspace\\dev-test\\MyOpenBaking\\MyOpenBanking.Domain\\MyOpenBanking.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\jeano\\Documents\\workspace\\dev-test\\MyOpenBaking\\MyOpenBanking.Domain\\MyOpenBanking.Domain.csproj",
+        "projectName": "MyOpenBanking.Domain",
+        "projectPath": "C:\\Users\\jeano\\Documents\\workspace\\dev-test\\MyOpenBaking\\MyOpenBanking.Domain\\MyOpenBanking.Domain.csproj",
+        "packagesPath": "C:\\Users\\jeano\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\jeano\\Documents\\workspace\\dev-test\\MyOpenBaking\\MyOpenBanking.Domain\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\jeano\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "MongoDB.Driver": {
+              "target": "Package",
+              "version": "[2.13.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.302\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\jeano\\Documents\\workspace\\dev-test\\MyOpenBaking\\MyOpenBanking.IoC\\MyOpenBanking.IoC.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\jeano\\Documents\\workspace\\dev-test\\MyOpenBaking\\MyOpenBanking.IoC\\MyOpenBanking.IoC.csproj",
+        "projectName": "MyOpenBanking.IoC",
+        "projectPath": "C:\\Users\\jeano\\Documents\\workspace\\dev-test\\MyOpenBaking\\MyOpenBanking.IoC\\MyOpenBanking.IoC.csproj",
+        "packagesPath": "C:\\Users\\jeano\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\jeano\\Documents\\workspace\\dev-test\\MyOpenBaking\\MyOpenBanking.IoC\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\jeano\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\Users\\jeano\\Documents\\workspace\\dev-test\\MyOpenBaking\\MyOpenBanking.Application\\MyOpenBanking.Application.csproj": {
+                "projectPath": "C:\\Users\\jeano\\Documents\\workspace\\dev-test\\MyOpenBaking\\MyOpenBanking.Application\\MyOpenBanking.Application.csproj"
+              },
+              "C:\\Users\\jeano\\Documents\\workspace\\dev-test\\MyOpenBaking\\MyOpenBanking.DataAccess\\MyOpenBanking.DataAccess.csproj": {
+                "projectPath": "C:\\Users\\jeano\\Documents\\workspace\\dev-test\\MyOpenBaking\\MyOpenBanking.DataAccess\\MyOpenBanking.DataAccess.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[5.0.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.302\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,12 @@
+C:\Users\jeano\Documents\workspace\dev-test\MyOpenBaking\MyOpenBanking.Domain\bin\Debug\net5.0\MyOpenBanking.Domain.deps.json
+C:\Users\jeano\Documents\workspace\dev-test\MyOpenBaking\MyOpenBanking.Domain\bin\Debug\net5.0\MyOpenBanking.Domain.dll
+C:\Users\jeano\Documents\workspace\dev-test\MyOpenBaking\MyOpenBanking.Domain\bin\Debug\net5.0\ref\MyOpenBanking.Domain.dll
+C:\Users\jeano\Documents\workspace\dev-test\MyOpenBaking\MyOpenBanking.Domain\bin\Debug\net5.0\MyOpenBanking.Domain.pdb
+C:\Users\jeano\Documents\workspace\dev-test\MyOpenBaking\MyOpenBanking.Domain\obj\Debug\net5.0\MyOpenBanking.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jeano\Documents\workspace\dev-test\MyOpenBaking\MyOpenBanking.Domain\obj\Debug\net5.0\MyOpenBanking.Domain.AssemblyInfoInputs.cache
+C:\Users\jeano\Documents\workspace\dev-test\MyOpenBaking\MyOpenBanking.Domain\obj\Debug\net5.0\MyOpenBanking.Domain.AssemblyInfo.cs
+C:\Users\jeano\Documents\workspace\dev-test\MyOpenBaking\MyOpenBanking.Domain\obj\Debug\net5.0\MyOpenBanking.Domain.csproj.CoreCompileInputs.cache
+C:\Users\jeano\Documents\workspace\dev-test\MyOpenBaking\MyOpenBanking.Domain\obj\Debug\net5.0\MyOpenBanking.Domain.dll
+C:\Users\jeano\Documents\workspace\dev-test\MyOpenBaking\MyOpenBanking.Domain\obj\Debug\net5.0\ref\MyOpenBanking.Domain.dll
+C:\Users\jeano\Documents\workspace\dev-test\MyOpenBaking\MyOpenBanking.Domain\obj\Debug\net5.0\MyOpenBanking.Domain.pdb
+C:\Users\jeano\Documents\workspace\dev-test\MyOpenBaking\MyOpenBanking.Domain\obj\Debug\net5.0\MyOpenBanking.Domain.csproj.AssemblyReference.cache
