@@ -2,7 +2,13 @@
 
 This project was built wing the stack: MongoDB + .Net5 + Angular
 
-To run, entry on MyOpenBaking\MyOpenBaking directory and type
+To run, ensure that you have the .Net 5 sdk installed. It can be found here: https://dotnet.microsoft.com/download/dotnet/5.0
+
+Entry on MyOpenBaking\MyOpenBaking directory and type
+
+dotnet restore
+
+dotnet build
 
 dotnet run
 
