@@ -10,6 +10,8 @@ Download and install nodejs as wel: https://nodejs.org/en/
 
 Entry on MyOpenBaking\MyOpenBaking directory and type
 
+dotnet nuget add source https://api.nuget.org/v3/index.json -n nuget.org
+
 dotnet restore
 
 dotnet build
